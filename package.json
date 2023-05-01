@@ -2,6 +2,7 @@
     "name": "s-inventory",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://yuriisoroka165.github.io/s-inventory/",
     "dependencies": {
         "@emotion/react": "^11.10.8",
         "@emotion/styled": "^11.10.8",
