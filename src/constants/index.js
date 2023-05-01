@@ -1,2 +1,2 @@
-export * from "./iconsSize";
+export * from "./iconSize";
 export * from "./theme";
