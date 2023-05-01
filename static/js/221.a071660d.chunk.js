@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunks_inventory=self.webpackChunks_inventory||[]).push([[221],{221:function(n,e,t){t.r(e),t.d(e,{default:function(){return l}});var r,i=t(728),s=t(210),c=t(168),u=t(202).Z.div(r||(r=(0,c.Z)(["\n    display: flex;\n    gap: 20px;\n    align-items: center;\n    justify-content: center;\n"]))),a=t(184);var l=function(){return(0,a.jsxs)(u,{children:[(0,a.jsx)("h1",{children:"Welcome to inventory app"}),(0,a.jsx)(i.LO6,{size:s.E.large})]})}}}]);
+//# sourceMappingURL=221.a071660d.chunk.js.map
