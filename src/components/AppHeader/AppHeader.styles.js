@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderComponent = styled.header`
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
