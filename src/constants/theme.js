@@ -11,6 +11,7 @@ export const theme = Object.freeze({
         footerLineColor: "#323436",
         footerBackgroundColor: "#09192F",
         accentColor: "#52CEB8",
+        navigationIconColor: "#B1BBD9",
     },
     spacing: value => `${4 * value}px`,
     // in styled use: padding: ${props => props.theme.spacing(4)} // result - 16px

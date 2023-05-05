@@ -1,23 +1,16 @@
 import styled from "@emotion/styled";
+// import { NavLink } from "react-router-dom";
 
-export const UserMenuContainer = styled.div`
+export const AuthNavigationContainer = styled.div`
     display: flex;
-    gap: 10px;
-    align-items: center;
+    gap: 40px;
 `;
 
-export const UserGreeting = styled.p`
-    margin: 0;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.globalFontColor};
-`;
-
-export const LogOutButton = styled.button`
+export const LogInButton = styled.button`
     display: flex;
     gap: 5px;
     align-items: center;
     padding: 0;
-    /* text-decoration: none; */
     font-weight: 700;
     font-size: 16px;
     line-height: ${() => 47 / 40};

@@ -17,9 +17,9 @@ export const HeaderLink = styled(NavLink)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.globalFontColor};
 
-    /* &:hover {
+    &:hover {
         color: ${({ theme }) => theme.colors.linkHoverColor};
-    } */
+    }
 
     &::after {
         content: "";
