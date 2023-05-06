@@ -6,6 +6,7 @@ export const theme = Object.freeze({
         globalBorderColor: "#747478",
         globalFontColor: "#B1BBD9",
         linkHoverColor: "#52CEB8",
+        linkActiveColor: "#ffffff",
         headerBackgroundColor: "#09192F",
         headerLineColor: "#323436",
         footerLineColor: "#323436",
@@ -19,5 +20,10 @@ export const theme = Object.freeze({
         headerShadow:
             "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;",
         footerShadow: "0px -1px 100px 2px rgba(0, 0, 0, 0.75)",
+    },
+    fonts: {
+        globalFont: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif`,
     },
 });

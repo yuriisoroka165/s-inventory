@@ -1,14 +1,32 @@
+import { useState } from "react";
 import { CiLogin } from "react-icons/ci";
-import { iconSize } from "../../constants/iconSize";
 
 import { AuthNavigationContainer, LogInButton } from "./AuthNavigation.styled";
+import { ReactModalWindow } from "../common/ReactModalWindow/ReactModalWindow";
+import { iconSize } from "../../constants/iconSize";
 
 export default function AuthNavigation() {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    function openModal() {
+        setModalIsOpen(true);
+    }
+
+    function closeModal() {
+        setModalIsOpen(false);
+    }
+
     return (
-        <AuthNavigationContainer>
-            <LogInButton to="/login">
-                LogIn <CiLogin size={iconSize.medium} />
-            </LogInButton>
-        </AuthNavigationContainer>
+        <>
+            <AuthNavigationContainer>
+                <LogInButton onClick={openModal}>
+                    LogIn <CiLogin size={iconSize.medium} />
+                </LogInButton>
+            </AuthNavigationContainer>
+            <ReactModalWindow
+                isOpen={modalIsOpen}
+                onClose={closeModal}
+            ></ReactModalWindow>
+        </>
     );
 }

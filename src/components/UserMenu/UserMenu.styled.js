@@ -17,7 +17,6 @@ export const LogOutButton = styled.button`
     gap: 5px;
     align-items: center;
     padding: 0;
-    /* text-decoration: none; */
     font-weight: 700;
     font-size: 16px;
     line-height: ${() => 47 / 40};
@@ -25,14 +24,14 @@ export const LogOutButton = styled.button`
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--font-color);
-
-    &:active {
-        color: var(--global-white-color);
-    }
+    color: ${({ theme }) => theme.colors.globalFontColor};
 
     &:hover {
         color: ${({ theme }) => theme.colors.linkHoverColor};
+    }
+
+    &:active {
+        color: ${({ theme }) => theme.colors.linkActiveColor};
     }
 
     svg {
@@ -47,7 +46,7 @@ export const LogOutButton = styled.button`
 
     &:active {
         svg {
-            fill: ${({ theme }) => theme.colors.globalBlackColor};
+            fill: ${({ theme }) => theme.colors.linkActiveColor};
         }
     }
 `;
