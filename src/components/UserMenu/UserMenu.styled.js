@@ -8,7 +8,10 @@ export const UserMenuContainer = styled.div`
 
 export const UserGreeting = styled.p`
     margin: 0;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: ${() => 47 / 40};
+    letter-spacing: 0.02em;
     color: ${({ theme }) => theme.colors.globalFontColor};
 `;
 
@@ -17,10 +20,11 @@ export const LogOutButton = styled.button`
     gap: 5px;
     align-items: center;
     padding: 0;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     line-height: ${() => 47 / 40};
     letter-spacing: 0.02em;
+    font-family: ${({ theme }) => theme.fonts.globalFont};
     background: none;
     border: none;
     cursor: pointer;

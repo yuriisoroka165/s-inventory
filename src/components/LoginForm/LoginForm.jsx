@@ -1,16 +1,44 @@
+import { useForm } from "react-hook-form";
+
+import {
+    StyledLoginForm,
+    LoginFormLabel,
+    LoginFormInput,
+    LoginFormSubmitButton,
+} from "./LoginForm.styled";
+
 export const LoginForm = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const loginFormOnSubmit = data => {
+        console.log(data);
+    };
+
     return (
-        <>
-            <form>
-                <h3>Please login</h3>
-                <input name="login" type="text" placeholder="E-mail*" />
-                <input
+        <StyledLoginForm onSubmit={handleSubmit(loginFormOnSubmit)}>
+            <LoginFormLabel htmlFor="userName">
+                User name (login):
+                <LoginFormInput
+                    name="userName"
+                    type="userName"
+                    {...register("userName", { required: true })}
+                />
+                {errors.userName && <p>Email is required.</p>}
+            </LoginFormLabel>
+            <LoginFormLabel htmlFor="password">
+                Password
+                <LoginFormInput
                     name="password"
                     type="password"
-                    placeholder="Password*"
+                    {...register("password", { required: true })}
                 />
-                <button type="submit">Login</button>
-            </form>
-        </>
+                {errors.password && <p>Password is required.</p>}
+            </LoginFormLabel>
+            <LoginFormSubmitButton type="submit">Login</LoginFormSubmitButton>
+        </StyledLoginForm>
     );
 };

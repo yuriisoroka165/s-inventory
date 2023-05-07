@@ -10,11 +10,11 @@ export const LogInButton = styled.button`
     gap: 5px;
     align-items: center;
     padding: 0;
-    font-family: ${({ theme }) => theme.fonts.globalFont};
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     line-height: ${() => 47 / 40};
     letter-spacing: 0.02em;
+    font-family: ${({ theme }) => theme.fonts.globalFont};
     background: none;
     border: none;
     cursor: pointer;

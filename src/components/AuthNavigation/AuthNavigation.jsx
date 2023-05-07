@@ -4,6 +4,7 @@ import { CiLogin } from "react-icons/ci";
 import { AuthNavigationContainer, LogInButton } from "./AuthNavigation.styled";
 import { ReactModalWindow } from "../common/ReactModalWindow/ReactModalWindow";
 import { iconSize } from "../../constants/iconSize";
+import { LoginForm } from "../LoginForm/LoginForm";
 
 export default function AuthNavigation() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -26,7 +27,9 @@ export default function AuthNavigation() {
             <ReactModalWindow
                 isOpen={modalIsOpen}
                 onClose={closeModal}
-            ></ReactModalWindow>
+            >
+                <LoginForm />
+            </ReactModalWindow>
         </>
     );
 }

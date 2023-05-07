@@ -13,7 +13,7 @@ export const ReactModalWindow = ({ onClose, isOpen, children }) => {
                 shouldCloseOnOverlayClick={true}
                 shouldCloseOnEsc={true}
             >
-                <CloseButtonComponent onClick={onClose}/>
+                <CloseButtonComponent onClick={onClose} />
                 {children}
             </ModalWindow>
         </>
