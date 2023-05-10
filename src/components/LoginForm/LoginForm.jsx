@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+// import { useNavigate } from "react-router-dom";
 
 import {
     StyledLoginForm,
@@ -13,9 +14,12 @@ export const LoginForm = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    // перенаправлення на сторінку при логіні
+    // const navigate = useNavigate();
 
     const loginFormOnSubmit = data => {
         console.log(data);
+        // navigate("/inventory", { replace: true });
     };
 
     return (
