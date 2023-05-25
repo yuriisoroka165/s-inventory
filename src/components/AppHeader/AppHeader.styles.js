@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    width: 1200px;
+    width: ${props => props.theme.width.globalContainerWidth};
     z-index: 999;
 `;
 

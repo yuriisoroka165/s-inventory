@@ -1,9 +1,7 @@
 import { Backdrop } from "./Backdrop.styled";
 
-export const BackdropComponent = ({children}) => {
-    return (
-        <Backdrop>
-            {children}
-        </Backdrop>
-    );
-}
+const BackdropComponent = ({ children }) => {
+    return <Backdrop>{children}</Backdrop>;
+};
+
+export default BackdropComponent;

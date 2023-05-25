@@ -3,7 +3,7 @@ import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import UserMenu from "../UserMenu/UserMenu";
 import { HeaderContainer, HeaderComponent } from "./AppHeader.styles";
 
-export default function AppHeader() {
+const AppHeader = () => {
     return (
         <HeaderComponent>
             <HeaderContainer>
@@ -13,4 +13,6 @@ export default function AppHeader() {
             </HeaderContainer>
         </HeaderComponent>
     );
-}
+};
+
+export default AppHeader;

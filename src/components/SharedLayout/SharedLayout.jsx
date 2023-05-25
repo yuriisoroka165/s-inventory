@@ -5,7 +5,7 @@ import AppHeader from "../AppHeader";
 import AppFooter from "../AppFooter/AppFooter";
 import { Container } from "./SharedLayout.styled";
 
-export default function SharedLayout() {
+const SharedLayout = () => {
     return (
         <>
             <AppHeader />
@@ -19,4 +19,6 @@ export default function SharedLayout() {
             <AppFooter />
         </>
     );
-}
+};
+
+export default SharedLayout;

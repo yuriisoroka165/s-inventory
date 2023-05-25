@@ -7,14 +7,16 @@ import {
     LogOutButton,
 } from "./UserMenu.styled";
 
-export default function UserMenu() {
+const UserMenu = () => {
     return (
         <UserMenuContainer>
             <UserGreeting>Hello, Guest</UserGreeting>
-            <LogOutButton title="LogOut"> 
+            <LogOutButton title="LogOut">
                 Logout
                 <CiLogout size={iconSize.medium} />
             </LogOutButton>
         </UserMenuContainer>
     );
-}
+};
+
+export default UserMenu;

@@ -8,7 +8,7 @@ import {
     LoginFormSubmitButton,
 } from "./LoginForm.styled";
 
-export const LoginForm = () => {
+const LoginForm = () => {
     const {
         register,
         handleSubmit,
@@ -46,3 +46,5 @@ export const LoginForm = () => {
         </StyledLoginForm>
     );
 };
+
+export default LoginForm;

@@ -6,5 +6,5 @@ export const Container = styled.div`
     margin-right: auto;
     padding-left: ${props => props.theme.spacing(4)};
     padding-right: ${props => props.theme.spacing(4)};
-    width: 1200px;
+    width: ${props => props.theme.width.globalContainerWidth};
 `;

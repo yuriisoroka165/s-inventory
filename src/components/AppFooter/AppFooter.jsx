@@ -1,6 +1,6 @@
 import { FooterContainer, FooterComponent } from "./AppFooter.styles";
 
-export default function AppFooter() {
+const AppFooter = () => {
     return (
         <>
             <FooterComponent>
@@ -10,4 +10,6 @@ export default function AppFooter() {
             </FooterComponent>
         </>
     );
-}
+};
+
+export default AppFooter;

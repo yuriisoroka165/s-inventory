@@ -1,9 +1,9 @@
 // import { useState } from "react";
 
-import { CloseButtonComponent } from "../CloseButtonComponent/CloseButtonComponent";
+import CloseButtonComponent from "../CloseButtonComponent/CloseButtonComponent";
 import { ModalWindow } from "./ReactModalWindow.styled";
 
-export const ReactModalWindow = ({ onClose, isOpen, children }) => {
+const ReactModalWindow = ({ onClose, isOpen, children }) => {
     return (
         <>
             <ModalWindow
@@ -19,3 +19,5 @@ export const ReactModalWindow = ({ onClose, isOpen, children }) => {
         </>
     );
 };
+
+export default ReactModalWindow;
