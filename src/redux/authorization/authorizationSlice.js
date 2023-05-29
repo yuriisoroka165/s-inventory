@@ -30,5 +30,5 @@ export const persistedAuthorizationReducer = persistReducer(
     authorizationSlice.reducer
 );
 
-export const { logIn, logOut } = authorizationSlice.actions;
+// export const { logIn, logOut } = authorizationSlice.actions;
 // export const authorizationReducer = authorizationSlice.reducer;

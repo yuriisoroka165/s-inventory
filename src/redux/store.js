@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import {
     persistStore,
     FLUSH,
@@ -11,11 +10,13 @@ import {
 } from "redux-persist";
 
 import { filterReducer } from "./filter";
-import { persistedAuthorizationReducer } from "./authorization";
+import { persistedDevicesReducer } from "./devices/devicesSlice";
+// import { persistedAuthorizationReducer } from "./authorization";
 
 export const store = configureStore({
     reducer: {
-        authorization: persistedAuthorizationReducer,
+        // authorization: persistedAuthorizationReducer,
+        devices: persistedDevicesReducer,
         filter: filterReducer,
     },
     middleware(getDefaultMiddleware) {

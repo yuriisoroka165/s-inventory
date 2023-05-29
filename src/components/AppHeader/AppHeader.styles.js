@@ -14,6 +14,7 @@ export const HeaderComponent = styled.header`
     top: 0;
     left: 0;
     width: 100%;
+    margin-bottom: 20px;
     border-bottom: ${({ theme }) =>
         `1px solid ${theme.colors.headerLineColor}`};
     background-color: ${({ theme }) => `${theme.colors.headerBackgroundColor}`};
