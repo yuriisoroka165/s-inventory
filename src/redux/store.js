@@ -11,12 +11,14 @@ import {
 
 import { filterReducer } from "./filter";
 import { persistedDevicesReducer } from "./devices/devicesSlice";
+import { persistedBranchesReducer } from "./branches/branchesSlice";
 // import { persistedAuthorizationReducer } from "./authorization";
 
 export const store = configureStore({
     reducer: {
         // authorization: persistedAuthorizationReducer,
         devices: persistedDevicesReducer,
+        branches: persistedBranchesReducer,
         filter: filterReducer,
     },
     middleware(getDefaultMiddleware) {

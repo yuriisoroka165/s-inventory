@@ -2,50 +2,52 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 
-import { fetchDevices, addDevice, deleteDevice } from "./devicesOperations";
+import { fetchBranches, addBranch, deleteBranch } from "./branchesOperations";
 
-const actions = [fetchDevices, addDevice, deleteDevice];
+const actions = [fetchBranches, addBranch, deleteBranch];
 
-const devicesInitialState = {
+const branchesInitialState = {
     items: [],
     error: null,
 };
 
-const handleFetchDevices = (state, action) => {
+const handleFetchBranches = (state, action) => {
     state.items = action.payload;
 };
 
-const handleAddDevice = (state, action) => {
+const handleAddBranch = (state, action) => {
     state.items.push(action.payload);
 };
 
-const handleDeleteDevice = (state, action) => {
-    const deviceIndex = state.items.findIndex(
+const handleDeleteBranch = (state, action) => {
+    const branchIndex = state.items.findIndex(
         item => item.id === action.payload.id
     );
-    state.item.splice(deviceIndex, 1);
+    state.item.splice(branchIndex, 1);
 };
 
 const handleFulfilled = state => {
+    state.isLoading = false;
     state.error = null;
 };
 
 const hadlePending = state => {
-
+    state.isLoading = true;
 };
 
 const handleRejected = (state, action) => {
+    state.isLoading = false;
     state.error = action.payload;
 };
 
-export const devicesSlice = createSlice({
-    name: "devices",
-    initialState: devicesInitialState,
+export const branchesSlice = createSlice({
+    name: "branches",
+    initialState: branchesInitialState,
     extraReducers: builder =>
         builder
-            .addCase(fetchDevices.fulfilled, handleFetchDevices)
-            .addCase(addDevice.fulfilled, handleAddDevice)
-            .addCase(deleteDevice.fulfilled, handleDeleteDevice)
+            .addCase(fetchBranches.fulfilled, handleFetchBranches)
+            .addCase(addBranch.fulfilled, handleAddBranch)
+            .addCase(deleteBranch.fulfilled, handleDeleteBranch)
             .addMatcher(
                 isAnyOf(...actions.map(action => action.fulfilled)),
                 handleFulfilled
@@ -60,14 +62,13 @@ export const devicesSlice = createSlice({
             ),
 });
 
-// export const devicesReducer = devicesSlice.reducer;
-const devicesPersistConfig = {
-    key: "devices",
+const branchesPersistConfig = {
+    key: "branches",
     storage,
     whitelist: ["items"],
 };
 
-export const persistedDevicesReducer = persistReducer(
-    devicesPersistConfig,
-    devicesSlice.reducer
+export const persistedBranchesReducer = persistReducer(
+    branchesPersistConfig,
+    branchesSlice.reducer
 );

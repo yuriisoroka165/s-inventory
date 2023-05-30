@@ -1,63 +1,83 @@
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
-import ReactTable from "react-table";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import { fetchDevices } from "redux/devices/devicesOperations";
 import { selectDevices } from "redux/devices/devicesSelectors";
+import AppTableComponent from "components/AppTableComponent";
 
 const DevicesView = () => {
+    const dispatch = useDispatch();
     const devices = useSelector(selectDevices);
-    const storedDevices = useMemo(() => (devices ? devices : []), [devices]);
 
+    useEffect(() => {
+        if (devices) {
+            return;
+        }
+        dispatch(fetchDevices());
+    }, [devices, dispatch]);
     const columns = [
         {
-            Header: "ID",
-            accessor: "id",
+            name: "Responsible",
+            selector: row => row.employee_full_name,
+            width: "220px",
+            sortable: true,
         },
         {
-            Header: "Device type",
-            accessor: "device_type_name",
+            name: "Device type",
+            selector: row => row.device_type_name,
+            width: "130px",
         },
         {
-            Header: "Device configuration",
-            accessor: "device_name_configuration",
+            id: "sort_by_device",
+            name: "Device configuration",
+            selector: row => row.device_name_configuration,
+            width: "1495px",
         },
         {
-            Header: "Serial number",
-            accessor: "device_serial_number",
+            name: "Serial number",
+            selector: row => row.device_serial_number,
+            width: "180px",
         },
         {
-            Header: "Inventory number",
-            accessor: "device_inventory_number",
+            name: "Inventory number",
+            selector: row => row.device_inventory_number,
+            width: "180px",
+        },
+
+        {
+            name: "MAC address",
+            selector: row => row.device_mac_address,
+            width: "140px",
         },
         {
-            Header: "Responsible",
-            accessor: "employee_full_name",
+            name: "IP address",
+            selector: row => row.device_ip_address,
+            width: "130px",
         },
         {
-            Header: "MAC address",
-            accessor: "device_mac_address",
+            name: "Purchase date",
+            selector: row => row.date_of_purchase,
+            width: "100px",
         },
         {
-            Header: "IP address",
-            accessor: "device_ip_address",
+            name: "Warranty end",
+            selector: row => row.end_of_warranty,
+            width: "100px",
         },
         {
-            Header: "Purchase date",
-            accessor: "date_of_purchase",
-        },
-        {
-            Header: "Warranty end",
-            accessor: "end_of_warranty",
-        },
-        {
-            Header: "Note",
-            accessor: "note",
+            name: "Note",
+            selector: row => row.note,
+            width: "220px",
         },
     ];
 
     return (
         <>
-            <ReactTable data={storedDevices} columns={columns} />
+            <AppTableComponent
+                columns={columns}
+                data={devices}
+                defaultSortFieldId={"sort_by_device"}
+            />
         </>
     );
 };
