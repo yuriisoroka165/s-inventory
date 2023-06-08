@@ -2,7 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Notify } from "notiflix";
 
-axios.defaults.baseURL = "http://192.168.50.20:2615";
+axios.defaults.baseURL = "http://localhost:2615";
 
 export const fetchDevices = createAsyncThunk(
     "devices/fetchDevices",

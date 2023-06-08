@@ -2,13 +2,14 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Notify } from "notiflix";
 
-// axios.defaults.baseURL = "http://192.168.50.20:2615";
+axios.defaults.baseURL = "http://localhost:2615";
 
 export const fetchBranches = createAsyncThunk(
     "branches/fetchBranches",
     async (_, thunkAPI) => {
         try {
             const response = await axios.get("/api/branches");
+            console.log(response.data);
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);

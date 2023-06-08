@@ -9,8 +9,10 @@ const BranchesView = () => {
     const dispatch = useDispatch();
     const branches = useSelector(selectBranches);
 
+    console.log(branches);
+
     useEffect(() => {
-        if (branches) {
+        if (branches.length !== 0) {
             return;
         }
         dispatch(fetchBranches());

@@ -10,7 +10,7 @@ const DevicesView = () => {
     const devices = useSelector(selectDevices);
 
     useEffect(() => {
-        if (devices) {
+        if (devices.length !== 0) {
             return;
         }
         dispatch(fetchDevices());
